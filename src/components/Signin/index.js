@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Importe o useNavigate
+import { useNavigate } from 'react-router-dom';
 import {
   Container,
   FormWrap,
@@ -11,7 +11,6 @@ import {
   FormInput,
   FormButton,
   LoginButton,
-  Text
 } from './SigninElements';
 
 const SignIn = () => {
@@ -19,8 +18,9 @@ const SignIn = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [showPassword, setShowPassword] = useState(false); // Estado para mostrar/esconder a senha
   
-  const navigate = useNavigate(); // Inicialize o useNavigate
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,7 +29,10 @@ const SignIn = () => {
       setErrorMessage('As senhas não coincidem');
     } else {
       setErrorMessage('');
-      // Redirecione para a página de sucesso
+      // Salva o email e a senha no localStorage
+      localStorage.setItem('email', email);
+      localStorage.setItem('password', password);
+      // Redireciona para a página de sucesso
       navigate('/success');
     }
   };
@@ -40,32 +43,50 @@ const SignIn = () => {
         <Icon to="/">SkateFlow</Icon>
         <FormContent>
           <Form onSubmit={handleSubmit}>
-            <FormH1> Crie sua conta ou faça Login </FormH1>
+            <FormH1> CADASTRO DE ADMIN </FormH1>
             <FormLabel htmlFor='email'>Email</FormLabel>
-            <FormInput 
-              type='email' 
-              required 
-              value={email} 
-              onChange={(e) => setEmail(e.target.value)} 
+            <FormInput
+              type='email'
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              autoComplete="off"
             />
             <FormLabel htmlFor='password'>Senha</FormLabel>
-            <FormInput 
-              type='password' 
-              required 
-              value={password} 
-              onChange={(e) => setPassword(e.target.value)} 
-            />
+            <div style={{ position: 'relative' }}>
+              <FormInput
+                type={showPassword ? 'text' : 'password'}
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                autoComplete="new-password"
+              />
+              <span
+                onClick={() => setShowPassword(!showPassword)}
+                style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', cursor: 'pointer' }}
+              >
+                {showPassword ? '👁️' : '🙈'} {/* Um olho para mostrar e um macaco para esconder */}
+              </span>
+            </div>
             <FormLabel htmlFor='confirmPassword'>Repetir Senha</FormLabel>
-            <FormInput 
-              type='password' 
-              required 
-              value={confirmPassword} 
-              onChange={(e) => setConfirmPassword(e.target.value)} 
-            />
+            <div style={{ position: 'relative' }}>
+              <FormInput
+                type={showPassword ? 'text' : 'password'}
+                required
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                autoComplete="new-password"
+              />
+              <span
+                onClick={() => setShowPassword(!showPassword)}
+                style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', cursor: 'pointer' }}
+              >
+                {showPassword ? '👁️' : '🙈'} {/* Um olho para mostrar e um macaco para esconder */}
+              </span>
+            </div>
             {errorMessage && <p className="error-text">{errorMessage}</p>}
             <FormButton type='submit'>Continue</FormButton>
             <LoginButton to="/login">Fazer Login</LoginButton>
-            <Text>Esqueceu sua senha?</Text>
           </Form>
         </FormContent>
       </FormWrap>
