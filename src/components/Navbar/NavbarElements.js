@@ -87,7 +87,7 @@ export const NavLinks = styled(LinkS)`
         :active, :hover, :focus in one big css block */
 
     &.active {
-        border-bottom: 3px solid #F39540;
+        border-bottom: 3px solid #3888D2;
     }
 `;
 
@@ -102,10 +102,10 @@ export const NavBtn = styled.nav`
 `;
 export const NavBtnLink = styled(LinkR)`
     border-radius: 50px;
-    background: #F39540;
+    background: #043C70;
     white-space: nowrap;
     padding: 10px 22px;
-    color: #010606;
+    color: #C0C0C0;
     font-size: 16px;
     outline: none;
     border: none;
