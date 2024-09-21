@@ -10,7 +10,7 @@ export const Container = styled.div`
     top: 0;
     z-index: 0;
     overflow: hidden;
-  background: radial-gradient(circle, rgba(56,136,210,1) 20%, rgba(4,60,112,1) 30%, rgba(0,0,0,1) 100%);
+  background: radial-gradient(circle, rgba(4,60,112,1) 20%, rgba(4,60,112,1) 30%, rgba(0,0,0,1) 100%);
 `
 
 export const FormWrap = styled.div`
