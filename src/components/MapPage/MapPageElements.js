@@ -30,7 +30,7 @@ export const Icon = styled(Link)`
   font-size: 32px;
 
   &:hover {
-    color: #01bf71;
+    color: #00008B;
   }
 `;
 
@@ -62,7 +62,7 @@ export const Map = styled.div`
 
 
 export const BackButton = styled(Link)`
-  background: #01bf71;
+  background: #00008B;
   padding: 10px 22px;
   color: #fff;
   font-size: 16px;
@@ -70,7 +70,7 @@ export const BackButton = styled(Link)`
   text-decoration: none;
 
   &:hover {
-    background: #01bf71;
+    background: #0000CD;
     color: #010606;
   }
 `;

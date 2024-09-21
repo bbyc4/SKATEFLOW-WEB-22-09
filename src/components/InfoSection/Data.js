@@ -31,7 +31,7 @@ export const homeObjTwo = {
     dark: false,
     primary: false,
     darkText: true,
-    linkTo: 'https://www.example.com', // Link aleatório
+    linkTo: '/events', // Link aleatório
 };
 
 export const homeObjThree = {

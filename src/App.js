@@ -5,7 +5,8 @@ import SignInPage from './pages/signin'; // Sua página de cadastro
 import SuccessPage from './components/SucessPage/SucessPage';
 import Login from './pages/loginp'; // Mantenha o nome do import consistente
 import ForgetPage from './pages/forget'; // Corrigido para o nome do componente correto
-import Map from './pages/map'; // Correto se o arquivo se chama map.js
+import Map from './pages/map';
+import EventsPage from './components/EventsPage'; // Correto se o arquivo se chama map.js
 
 
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/forget" element={<ForgetPage />} />
         <Route path="/map" element={<Map />} />
+        <Route path="/events" element={<EventsPage />} />
       </Routes>
     </Router>
   );
