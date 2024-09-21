@@ -3,6 +3,7 @@ import { Container, FormWrap, Icon, FormContent, Form, FormH1, FormLabel, FormIn
 
 const ForgetPass = () => {
   const [email, setEmail] = useState('');
+  const [errorMessage, setErrorMessage] = useState(''); // Estado para armazenar a mensagem de erro
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -10,9 +11,9 @@ const ForgetPass = () => {
 
     if (email === storedEmail) {
       alert('Solicitação de recuperação de senha enviada para ' + email);
-      // Aqui você pode adicionar mais lógica, como enviar um email real
+      setErrorMessage(''); // Limpa a mensagem de erro
     } else {
-      alert('Email não encontrado. Verifique se está cadastrado.');
+      setErrorMessage('Email não encontrado. Verifique se está cadastrado.'); // Define a mensagem de erro
     }
   };
 
@@ -31,6 +32,8 @@ const ForgetPass = () => {
               onChange={(e) => setEmail(e.target.value)} 
               autoComplete="off" 
             />
+            {/* Exibe a mensagem de erro */}
+            {errorMessage && <p className="error-text">{errorMessage}</p>} 
             <FormButton type='submit'>Enviar</FormButton>
             <BackButton to="/login">Retornar ao Login</BackButton>
           </Form>

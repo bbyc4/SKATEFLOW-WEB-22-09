@@ -6,7 +6,6 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(''); // Estado para mensagem de erro
-  const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
 
@@ -38,21 +37,13 @@ const Login = () => {
               autoComplete="off"
             />
             <FormLabel htmlFor='password'>Senha</FormLabel>
-            <div style={{ position: 'relative' }}>
-              <FormInput 
-                type={showPassword ? 'text' : 'password'} 
-                required 
-                value={password} 
-                onChange={(e) => setPassword(e.target.value)} 
-                autoComplete="new-password"
-              />
-              <span 
-                onClick={() => setShowPassword(!showPassword)} 
-                style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', cursor: 'pointer' }}
-              >
-                {showPassword ? '👁️' : '🙈'}
-              </span>
-            </div>
+            <FormInput 
+              type='password'  // Removido o toggle de mostrar/esconder senha
+              required 
+              value={password} 
+              onChange={(e) => setPassword(e.target.value)} 
+              autoComplete="new-password"
+            />
             {errorMessage && <p className="error-text">{errorMessage}</p>} {/* Mensagem de erro */}
             <FormButton type='submit'>Entrar</FormButton>
             <Text>

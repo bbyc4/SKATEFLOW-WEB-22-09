@@ -18,8 +18,7 @@ const SignIn = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const [showPassword, setShowPassword] = useState(false); // Estado para mostrar/esconder a senha
-  
+
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -53,37 +52,21 @@ const SignIn = () => {
               autoComplete="off"
             />
             <FormLabel htmlFor='password'>Senha</FormLabel>
-            <div style={{ position: 'relative' }}>
-              <FormInput
-                type={showPassword ? 'text' : 'password'}
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                autoComplete="new-password"
-              />
-              <span
-                onClick={() => setShowPassword(!showPassword)}
-                style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', cursor: 'pointer' }}
-              >
-                {showPassword ? '👁️' : '🙈'} {/* Um olho para mostrar e um macaco para esconder */}
-              </span>
-            </div>
+            <FormInput
+              type='password'  // Removido o toggle de mostrar/esconder senha
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete="new-password"
+            />
             <FormLabel htmlFor='confirmPassword'>Repetir Senha</FormLabel>
-            <div style={{ position: 'relative' }}>
-              <FormInput
-                type={showPassword ? 'text' : 'password'}
-                required
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                autoComplete="new-password"
-              />
-              <span
-                onClick={() => setShowPassword(!showPassword)}
-                style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', cursor: 'pointer' }}
-              >
-                {showPassword ? '👁️' : '🙈'} {/* Um olho para mostrar e um macaco para esconder */}
-              </span>
-            </div>
+            <FormInput
+              type='password'  // Removido o toggle de mostrar/esconder senha
+              required
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              autoComplete="new-password"
+            />
             {errorMessage && <p className="error-text">{errorMessage}</p>}
             <FormButton type='submit'>Continue</FormButton>
             <LoginButton to="/login">Fazer Login</LoginButton>

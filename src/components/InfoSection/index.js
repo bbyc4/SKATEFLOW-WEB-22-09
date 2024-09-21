@@ -13,9 +13,10 @@ import {
     ImgWrap,
     Img,
 } from './InfoElements';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const StyledButton = styled.a`
+const StyledButton = styled(Link)`
     background: #000; /* Fundo preto */
     color: #fff; /* Texto branco */
     padding: 12px 30px;
@@ -46,7 +47,8 @@ const InfoSection = ({
     alt,
     primary,
     dark,
-    dark2
+    dark2,
+    linkTo
 }) => {
     return (
         <InfoContainer lightBg={lightBg} id={id}>
@@ -59,9 +61,7 @@ const InfoSection = ({
                             <Subtitle darkText={darkText}>{description}</Subtitle>
                             <BtnWrap>
                                 <StyledButton 
-                                    href="https://genrandom.com/cats/"
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
+                                    to={linkTo} // Usando linkTo para redirecionar corretamente
                                     primary={primary ? 1 : 0}
                                     dark={dark ? 1 : 0}
                                     dark2={dark2 ? 1 : 0}

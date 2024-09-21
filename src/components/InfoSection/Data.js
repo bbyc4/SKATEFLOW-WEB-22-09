@@ -1,6 +1,3 @@
-// undraw.co to get svg images
-
-
 export const homeObjOne = {
     id: 'about',
     lightBg: false,
@@ -8,15 +5,16 @@ export const homeObjOne = {
     lightTextDesc: true,
     topLine: '',
     headline: 'Veja pistas ao seu redor pelo nosso mapa!',
-    description: 'Pistas compartilhadas por outros usuarios.',
+    description: 'Pistas compartilhadas por outros usuários.',
     buttonLabel: 'Acessar',
     imgStart: false,
     img: require('../../images/ph.svg').default,
     alt: 'GugaAbout',
     dark: true,
     primary: true,
-    darkText: false
-}
+    darkText: false,
+    linkTo: '/map', // Link para a página de mapas
+};
 
 export const homeObjTwo = {
     id: 'discover',
@@ -32,8 +30,9 @@ export const homeObjTwo = {
     alt: 'GugaDiscover',
     dark: false,
     primary: false,
-    darkText: true
-}
+    darkText: true,
+    linkTo: 'https://www.example.com', // Link aleatório
+};
 
 export const homeObjThree = {
     id: 'signup',
@@ -42,12 +41,13 @@ export const homeObjThree = {
     lightTextDesc: false,
     topLine: 'Baixe nosso aplicativo!',
     headline: 'Baixe nosso aplicativo mobile!',
-    description: "Com o SkateFlow mobile, você consegue agendar seus ingressos para ir a eventos, avaliar pistas e ver suas avaliações feitas por outros usuarios e muito mais! ",
+    description: "Com o SkateFlow mobile, você consegue agendar seus ingressos para ir a eventos, avaliar pistas e ver suas avaliações feitas por outros usuários e muito mais!",
     buttonLabel: 'Baixar',
     imgStart: false,
     img: require('../../images/app.svg').default,
     alt: 'GugaSignUp',
     dark: false,
     primary: false,
-    darkText: true
-}
+    darkText: true,
+    linkTo: 'https://www.example.com', // Outro link aleatório
+};
