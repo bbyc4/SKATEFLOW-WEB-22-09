@@ -10,7 +10,7 @@ export const Container = styled.div`
     top: 0;
     z-index: 0;
     overflow: hidden;
-    background: radial-gradient(circle, rgba(243,149,64,1) 20%, rgba(61,13,1,1) 90%, rgba(0,0,0,1) 100%);
+  background: radial-gradient(circle, rgba(56,136,210,1) 20%, rgba(4,60,112,1) 30%, rgba(0,0,0,1) 100%);
 `
 
 export const FormWrap = styled.div`
@@ -88,7 +88,7 @@ export const FormInput = styled.input`
 `
 
 export const FormButton = styled.button`
-    background: #F39540;
+    background: #043C70;
     padding: 16px 0;
     border: none;
     border-radius: 4px;

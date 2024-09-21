@@ -1,48 +1,54 @@
-import React, { useState } from 'react'
-// pexels.com for free stock videos
-import Video from '../../videos/dog.mp4'
+import React, { useState } from 'react';
+import Img from '../../images/fundo-inicial.png'; // Caminho da imagem correto
 import {
     HeroContainer,
     HeroBg,
-    DogBg,
     HeroContent,
     HeroH1,
     HeroP,
     HeroBtnWrapper,
     ArrowForward,
     ArrowRight
-} from './HeroElements'
+} from './HeroElements';
 
-import { Button } from '../ButtonElement'
+import { Button } from '../ButtonElement';
 
 const HeroSection = () => {
 
-    const [ hover, setHover ] = useState(false)
+    const [ hover, setHover ] = useState(false);
 
     const onHover = () => {
-        setHover(!hover)
+        setHover(!hover);
     }
 
     return (
         <HeroContainer id="home">
-            <HeroBg>
-                <DogBg autoPlay loop muted src={Video} type='dog/mp4'/>
+            <HeroBg style={{
+                backgroundImage: `url(${Img})`, // Definir imagem como background
+                backgroundSize: 'cover',        // Garantir que ela cubra todo o fundo
+                backgroundPosition: 'center',   // Centralizar a imagem
+                backgroundRepeat: 'no-repeat',  // Impedir que a imagem se repita
+                width: '100%',                  // Garantir que ocupe toda a largura
+                height: '100%',                 // Garantir que ocupe toda a altura
+                position: 'absolute',           // Permitir sobreposição de conteúdo
+                top: 0,
+                left: 0
+            }}>
             </HeroBg>
             <HeroContent>
                 <HeroH1> Bem Vindo à SkateFlow </HeroH1>
-                <HeroP> 
-                       Somos uma comunidade, onde você, skatista, pode encontrar outros skatistas!
-                       
+                <HeroP>
+                    Somos uma comunidade, onde você, skatista, pode encontrar outros skatistas!
                 </HeroP>
                 <HeroP>
-                Tenha acesso a pistas compartilhadas por usuarios, veja e agende seus ingressos para eventos 
-                que estamos divulgando e leia artigos escritos por nós!
+                    Tenha acesso a pistas compartilhadas por usuários, veja e agende seus ingressos para eventos 
+                    que estamos divulgando e leia artigos escritos por nós!
                 </HeroP>
                 <HeroBtnWrapper>
                     <Button 
                         to="about" 
-                        onMouseEnter={ onHover } 
-                        onMouseLeave={ onHover }
+                        onMouseEnter={onHover} 
+                        onMouseLeave={onHover}
                         primary="true"
                         dark="true"
                         smooth={true}
@@ -50,14 +56,14 @@ const HeroSection = () => {
                         spy={true}
                         activeClass='active'
                         exact='true'
-                        > 
+                    >
                         Iniciar
                         {hover ? <ArrowForward/> : <ArrowRight/>} 
                     </Button>
                 </HeroBtnWrapper>
             </HeroContent>
         </HeroContainer>
-    )
+    );
 }
 
-export default HeroSection
+export default HeroSection;
