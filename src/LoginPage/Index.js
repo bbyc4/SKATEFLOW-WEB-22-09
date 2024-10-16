@@ -49,7 +49,7 @@ const Login = () => {
             <Text>
               <ForgetButton to="/forget">Esqueci a senha</ForgetButton>
             </Text>
-            <BackButton to="/signin">Voltar</BackButton>
+            <BackButton to="/">Voltar</BackButton>
           </Form>
         </FormContent>
       </FormWrap>

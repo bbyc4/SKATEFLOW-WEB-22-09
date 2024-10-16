@@ -51,7 +51,7 @@ const Services = () => {
               offset={-80}
               primary={1} 
               dark={0}
-          > Mais Informações </Button>
+          > Ver mais </Button>
         </BtnWrap>
     </ServicesContainer>
   )
