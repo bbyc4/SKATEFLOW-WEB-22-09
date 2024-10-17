@@ -1,3 +1,5 @@
+//ARTIGOS
+
 import React from 'react'
 import Icon1 from '../../images/ph.svg'
 import Icon2 from '../../images/news.svg'
@@ -16,7 +18,7 @@ import {
 import { Button } from '../ButtonElement'
 
 //card muda de tamanho dependendo da quantia de caracteres
-//acho uma boa mudarmos os ids, não mexi para todos fazermos isso juntos para ficarmos atualizados.
+
 const Services = () => {
   return (
     <ServicesContainer id='services'> 
@@ -25,6 +27,7 @@ const Services = () => {
             <ServicesCard>
               <ServicesIcon src={Icon1}/>
               <ServicesH2> Skateflow news </ServicesH2>
+              
               <ServicesP> Noticias do mundo do skate. </ServicesP>
             </ServicesCard>
             <ServicesCard>
