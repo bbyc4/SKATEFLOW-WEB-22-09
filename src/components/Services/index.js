@@ -1,6 +1,7 @@
 //ARTIGOS
 
 import React from 'react'
+import { Link } from 'react-router-dom';
 import Icon1 from '../../images/ph.svg'
 import Icon2 from '../../images/news.svg'
 import Icon3 from '../../images/logo2.svg'
@@ -30,12 +31,14 @@ const Services = () => {
               
               <ServicesP> Noticias do mundo do skate. </ServicesP>
             </ServicesCard>
+            <Link to="/artigo"  style={{ textDecoration: 'none', color: 'inherit' }}>
             <ServicesCard>
               <ServicesIcon src={Icon2}/>
               <ServicesH2> Top 10 pistas de skates 
                 da america latina </ServicesH2>
               <ServicesP> Avaliadas por vocês! </ServicesP>
             </ServicesCard>
+            </Link>
             <ServicesCard>
               <ServicesIcon src={Icon3}/>
               <ServicesH2> Grupos femininos de skate que 
