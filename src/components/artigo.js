@@ -7,7 +7,7 @@ const Artigo = () => {
 
     const Busca = async () => {
         axios
-        .get("http://localhost:8080/artigo")
+        .get("http://localhost:8080/artigos")
         .then((response) => {
             setDados(response.data);
         })
@@ -23,7 +23,7 @@ const Artigo = () => {
     return(
         <div>
             <ul>
-                <FlatList list={dados} renderItem={({item})=><Item item={item}/>} />
+                <FlatList list={dados} renderItem={item} />
             </ul>
         </div>
     );
